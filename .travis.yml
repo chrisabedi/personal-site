@@ -2,17 +2,17 @@ language: node_js
 node_js:
   - "12.4.0"
 cache:
-directories:
+  directories:
   - node_modules
 script:
   - npm test
   - npm run test:coverage
   - npm run build
 
-  deploy:
-    provider: pages
-    skip_cleanup: true
-    github_token: $github_token
-    local_dir: build
-    on: 
-      branch: master
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $github_token
+  local_dir: build
+  on: 
+    branch: master
